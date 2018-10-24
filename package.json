@@ -1,0 +1,43 @@
+{
+  "name": "babel-webpack-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode development",
+    "start": "webpack-dev-server --mode production --output-public-path=/dist/",
+    "dev": "nodemon --inspect --watch webpack.config.js --watch server.js main.js"
+  },
+  "author": "jonc@niras.dk",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "7.1.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-stage-0": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "@babel/runtime": "^7.1.2",
+    "babel-loader": "^8.0.4",
+    "css-loader": "^1.0.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "mongoose": "^5.3.4",
+    "node-sass": "^4.9.4",
+    "register-service-worker": "^1.5.2",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "sw-precache-webpack-plugin": "^0.11.5",
+    "uglify-es": "^3.3.9",
+    "webpack": "^4.21.0",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-hot-middleware": "^2.24.3"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.1.2"
+  }
+}
