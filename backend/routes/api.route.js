@@ -3,9 +3,9 @@ import express from 'express'
 const router = express.Router()
 const User = require('./../models/user')
 
-module.exports = function () {
-    router.get('/users', function (req, res) {
-        User.find(function (err, users) {
+module.exports = () => {
+    router.get('/users', (req, res) => {
+        User.find((err, users) => {
             if (err) {
                 return res.status(500).send(err)
             }

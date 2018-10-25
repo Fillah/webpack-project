@@ -11,4 +11,6 @@ async function getPosts() {
     return data
 }
 
-getPosts().then(posts => console.log(posts))
+if (window.navigator.onLine) {
+    getPosts().then(posts => console.log(posts))
+}

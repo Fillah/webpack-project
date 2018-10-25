@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
+const {GenerateSW} = require('workbox-webpack-plugin')
 
 module.exports = {
     mode: 'production',
@@ -73,19 +74,23 @@ module.exports = {
         new HTMLWebpackPlugin({
             template: './public/index.html'
         }),
+        new GenerateSW({
+            include: [/\.html$/, /\.js$/, /\.css$/],
+            exclude: '/node_modules'
+        })
         // service worker caching
-        new SWPrecacheWebpackPlugin(
-            {
-                cacheId: 'webpack-project',
-                filename: 'service-worker.js',
-                staticFileGlobs: [
-                    'dist/**/*.{js,css}',
-                    '/'
-                ],
-                minify: true,
-                stripPrefix: 'dist/',
-                dontCacheBustUrlsMatching: /\.\w{6}\./
-            }
-        )
+        // new SWPrecacheWebpackPlugin(
+        //     {
+        //         cacheId: 'webpack-project',
+        //         filename: 'service-worker.js',
+        //         staticFileGlobs: [
+        //             'dist/**/*.{js,css}',
+        //             '/'
+        //         ],
+        //         minify: true,
+        //         stripPrefix: 'dist/',
+        //         dontCacheBustUrlsMatching: /\.\w{6}\./
+        //     }
+        // )
     ]
 }

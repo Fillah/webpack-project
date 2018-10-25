@@ -1,5 +1,6 @@
 require('@babel/runtime/regenerator')
 require('webpack-hot-middleware/client?reload=true')
-require('./../js/registerServiceWorker')
+
+import './../js/registerServiceWorker'
 // require('./../../index.html')
-require('./../scss/main.scss')
+import './../scss/main.scss'
